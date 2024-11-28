@@ -23,7 +23,7 @@ defmodule AtomTorrent.Router do
   end
 
   match _ do
-    Logger.info("Page not found")
+    Logger.info("Request Path not found: #{conn.request_path}")
     send_resp(conn, 404, "Not found")
   end
 end

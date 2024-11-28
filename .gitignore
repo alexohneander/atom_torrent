@@ -24,3 +24,9 @@ atom_torrent-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+.elixir_ls/
+
+*.db
+*.db-shm
+*.db-wal

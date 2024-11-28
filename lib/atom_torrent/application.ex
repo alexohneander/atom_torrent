@@ -5,7 +5,8 @@ defmodule AtomTorrent.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      {Plug.Cowboy, scheme: :http, plug: AtomTorrent.Router, options: [port: 4000]}
+      {Plug.Cowboy, scheme: :http, plug: AtomTorrent.Router, options: [port: 4000]},
+      AtomTorrent.Repo,
     ]
 
     opts = [strategy: :one_for_one, name: AtomTorrent.Supervisor]

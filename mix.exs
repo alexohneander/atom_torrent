@@ -24,6 +24,7 @@ defmodule AtomTorrent.MixProject do
     [
       {:plug_cowboy, "~> 2.0"},
       {:bento, "~> 1.0"},
+      {:ecto_sqlite3, "~> 0.17"},
     ]
   end
 end
