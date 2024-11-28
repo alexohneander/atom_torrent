@@ -7,15 +7,13 @@ defmodule AtomTorrent.Controller.Announce do
     info_hash = conn.params["info_hash"]
     peer_id = conn.params["peer_id"]
 
-    if info_hash != nil && peer_id != nil do
-      # Return a response
-      decoded_info = Bento.decode(info_hash)
-      Logger.info(decoded_info)
+    peer = %AtomTorrent.Schema.Peer{
+      info_hash: info_hash,
+      peer_id:  peer_id
+    }
 
-      resp(conn, 200, "Announce")
-
-      # Bento.Parser.
-    end
+    AtomTorrent.Repo.insert(peer)
+    Logger.info(peer)
 
     resp(conn, 500, "Announce")
   end

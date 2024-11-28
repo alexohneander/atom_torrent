@@ -1,7 +1,7 @@
 defmodule AtomTorrent.Schema.Peer do
   use Ecto.Schema
 
-  # weather is the DB table
+  # peer is the DB table
   schema "peer" do
     field :info_hash, :string
     field :peer_id, :string
@@ -12,5 +12,6 @@ defmodule AtomTorrent.Schema.Peer do
     field :left, :integer
     field :event, :string
     field :numwant, :integer
+    timestamps()
   end
 end
